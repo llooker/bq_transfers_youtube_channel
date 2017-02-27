@@ -112,6 +112,7 @@ view: channel_traffic_source_a2_ycr {
   dimension: video_id {
     type: string
     sql: ${TABLE}.video_id ;;
+    html: <p> Video Title </p> ;;
   }
 
   dimension: views {
