@@ -6,7 +6,7 @@ include: "*.view"
 # include all the dashboards
 include: "*.dashboard"
 
-explore: channel_basic_a2_ycr {}
+
 explore: channel_combined_a2_ycr {
   label: "YouTube Channel"
   view_label: "YouTube"
@@ -17,5 +17,5 @@ explore: channel_combined_a2_ycr {
     sql_on: ${channel_combined_a2_ycr.video_id} = ${video_facts.video_id} ;;
   }
 }
-explore: channel_demographics_a1_ycr {}
+
 explore: channel_traffic_source_a2_ycr {}
