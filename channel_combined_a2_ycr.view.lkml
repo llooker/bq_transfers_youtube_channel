@@ -175,13 +175,7 @@ view: channel_combined_a2_ycr {
     type: number
     sql: ${TABLE}.average_view_duration_percentage ;;
   }
-  dimension: average_view_duration_percentage_tier {
-    type: tier
-    sql: ${average_view_duration_percentage} ;;
-    tiers: [0,25,50,75,100]
-    allow_fill: no
-    style: relational
-  }
+
   measure: avg_view_duration_percentage {
     label: "Average View Duration (percentage)"
     type: average
@@ -195,14 +189,7 @@ view: channel_combined_a2_ycr {
     type: number
     sql: ${TABLE}.average_view_duration_seconds ;;
   }
-  dimension: average_view_duration_minutes_tier {
-    type: tier
-    sql: ${average_view_duration_seconds}/60 ;;
-    tiers: [0,0.5,1,1.5,2,3,4,5,10,30,60]
-    allow_fill: no
-    style: relational
 
-  }
   measure: avg_view_duration_s {
     label: "Average View Duration (seconds)"
     type: average

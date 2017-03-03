@@ -30,6 +30,7 @@ view: video_facts {
   }
 
   dimension: video_avg_view_duration_min {
+    hidden:  yes
     type: number
     sql: ${TABLE}.avg_view_duration_s/60 ;;
   }
