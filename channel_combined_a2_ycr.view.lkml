@@ -8,7 +8,7 @@ view: channel_combined_a2_ycr {
   dimension_group: _data {
     type: time
     timeframes: [
-      raw,
+      time,
       date,
       week,
       month,
@@ -251,6 +251,11 @@ view: channel_combined_a2_ycr {
     type: count_distinct
     sql: ${video_id} ;;
     drill_fields: [video_detail*]
+  }
+
+  measure:  count_sources {
+    type: count_distinct
+    sql: ${traffic_source_type} ;;
   }
 
   set: video_detail {

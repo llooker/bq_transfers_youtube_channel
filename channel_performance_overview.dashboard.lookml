@@ -1,5 +1,5 @@
-- dashboard: channel_dashboard
-  title: Channel Dashboards
+- dashboard: channel_performance_overview
+  title: Channel Performance Overview
   layout: tile
   tile_size: 100
 
@@ -178,4 +178,3 @@
     colors: ['palette: Santa Cruz']
     series_colors: {}
     hidden_fields: [channel_combined_a2_ycr.total_views, channel_combined_a2_ycr.avg_view_duration_percentage]
-

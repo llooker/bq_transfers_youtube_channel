@@ -29,6 +29,19 @@ view: video_facts {
     sql: ${TABLE}.video_length_seconds ;;
   }
 
+  dimension: video_length_minutes {
+    type: number
+    sql: ${video_length_seconds}/60 ;;
+  }
+
+  dimension: video_length_minutes_tier {
+    type: tier
+    style: relational
+    tiers: [0,0.5,1,1.5,2,3,4,5,6,7,8,9,10,20,30,60]
+    sql: ${video_length_minutes} ;;
+    allow_fill: no
+  }
+
   dimension: video_avg_view_duration_min {
     hidden:  yes
     type: number

@@ -10,6 +10,7 @@ include: "*.dashboard"
 explore: channel_combined_a2_ycr {
   label: "YouTube Channel"
   view_label: "YouTube"
+
   join: video_facts {
     view_label: "YouTube"
     relationship: many_to_one
