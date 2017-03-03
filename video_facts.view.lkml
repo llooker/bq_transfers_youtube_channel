@@ -18,6 +18,7 @@ view: video_facts {
 
   dimension: video_id {
     primary_key: yes
+    hidden: yes
     type: string
     sql: ${TABLE}.video_id ;;
   }

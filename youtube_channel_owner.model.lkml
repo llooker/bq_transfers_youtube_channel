@@ -9,11 +9,12 @@ include: "*.dashboard"
 explore: channel_basic_a2_ycr {}
 explore: channel_combined_a2_ycr {
   label: "YouTube Channel"
+  view_label: "YouTube"
   join: video_facts {
-    view_label: "YouTube Channel"
+    view_label: "YouTube"
     relationship: many_to_one
     type: left_outer
-    sql: ${channel_combined_a2_ycr.video_id} = ${video_facts.video_id} ;;
+    sql_on: ${channel_combined_a2_ycr.video_id} = ${video_facts.video_id} ;;
   }
 }
 explore: channel_demographics_a1_ycr {}

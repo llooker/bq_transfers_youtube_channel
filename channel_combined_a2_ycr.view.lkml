@@ -90,11 +90,12 @@ view: channel_combined_a2_ycr {
               WHEN ${playback_location_type}=2 THEN 'YT Channel'
               WHEN ${playback_location_type}=5 THEN 'Unknown'
               WHEN ${playback_location_type}=7 THEN "YT User Home Page"
-              WHEN ${playback_location_type}=8 THEN "YT Search Page";;
+              WHEN ${playback_location_type}=8 THEN "YT Search Page"
+          END    ;;
   }
 
   dimension: subscribed_status {
-    description: "Is the user subscribed to this channel"
+    description: "Is the user subscribed to the channel"
     type: string
     sql: ${TABLE}.subscribed_status ;;
   }
@@ -146,7 +147,7 @@ view: channel_combined_a2_ycr {
 #######You Tube Metrics#########
     ######################
   dimension: average_view_duration_percentage {
-#     hidden: yes
+    hidden: yes
     type: number
     sql: ${TABLE}.average_view_duration_percentage ;;
   }
@@ -161,15 +162,9 @@ view: channel_combined_a2_ycr {
     label: "Average View Duration (percentage)"
     type: average
     sql: ${average_view_duration_percentage} ;;
-    value_format_name: percent_1
+    value_format: "0.0\%"
+    drill_fields: [video_detail*,avg_view_duration_percentage,-avg_view_duration_s]
   }
-
-  dimension: video_length_seconds {
-    hidden: yes
-    type: number
-    sql: ROUND(${average_view_duration_seconds}/(nullif(${average_view_duration_percentage}/100,0)) );;
-  }
-
 
   dimension: average_view_duration_seconds {
     hidden: yes
@@ -189,22 +184,27 @@ view: channel_combined_a2_ycr {
     type: average
     sql: ${average_view_duration_seconds} ;;
     value_format_name: decimal_1
+    drill_fields: [video_detail*]
   }
 
   dimension: red_views {
+    hidden: yes
     type: number
     sql: ${TABLE}.red_views ;;
   }
   measure: total_red_views {
     type: sum
     sql: ${red_views} ;;
+    drill_fields: [video_detail*]
   }
   measure: average_red_views {
     type: average
     sql: ${red_views} ;;
+    drill_fields: [video_id,average_red_views]
   }
 
   dimension: red_watch_time_minutes {
+    hidden: yes
     type: number
     sql: ${TABLE}.red_watch_time_minutes ;;
   }
@@ -217,29 +217,33 @@ view: channel_combined_a2_ycr {
   measure: total_views {
     type: sum
     sql: ${views} ;;
+    drill_fields: [video_detail*]
   }
   measure: average_views {
     type: average
     sql: ${views} ;;
+    drill_fields: [video_id,average_views]
   }
 
   dimension: watch_time_minutes {
+    hidden: yes
     type: number
     sql: ${TABLE}.watch_time_minutes ;;
   }
   measure: total_watch_time_minutes {
     type: sum
     sql: ${watch_time_minutes} ;;
+    drill_fields: [video_detail*,total_watch_time_minutes,-avg_view_duration_s]
   }
 
   measure: video_count {
     type: count_distinct
     sql: ${video_id} ;;
-    drill_fields: []
+    drill_fields: [video_detail*]
   }
 
   set: video_detail {
-    fields: [video_id, total_views,]
+    fields: [video_id, video_facts.video_length_seconds,avg_view_duration_s,total_views]
   }
 
 }

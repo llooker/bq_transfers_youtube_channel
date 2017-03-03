@@ -13,10 +13,11 @@ view: channel_demographics_a1_ycr {
       year
     ]
     convert_tz: no
-    sql: ${TABLE}._DATA_DATE ;;
+    sql: TIMESTAMP(${TABLE}._DATA_DATE) ;;
   }
 
   dimension_group: _latest {
+    hidden: yes
     type: time
     timeframes: [
       raw,
@@ -41,11 +42,13 @@ view: channel_demographics_a1_ycr {
   }
 
   dimension: country_code {
+    map_layer_name: countries
     type: string
     sql: ${TABLE}.country_code ;;
   }
 
   dimension: date {
+    hidden: yes
     type: string
     sql: ${TABLE}.date ;;
   }
