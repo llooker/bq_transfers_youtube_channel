@@ -72,9 +72,33 @@ view: channel_combined_a2_ycr {
     sql: ${TABLE}.live_or_on_demand ;;
   }
 
-  dimension: operating_system {
+  dimension: operating_system_code {
+    hidden: yes
     type: number
     sql: ${TABLE}.operating_system ;;
+  }
+  dimension: operating_system {
+    sql: CASE WHEN ${operating_system_code}=1 THEN 'Other'
+              WHEN ${operating_system_code}=2 THEN 'Windows'
+              WHEN ${operating_system_code}=3 THEN 'Windows Mobile'
+              WHEN ${operating_system_code}=4 THEN 'Android'
+              WHEN ${operating_system_code}=5 THEN 'iOS'
+              WHEN ${operating_system_code}=6 THEN 'Symbian'
+              WHEN ${operating_system_code}=7 THEN 'Blackberry'
+              WHEN ${operating_system_code}=9 THEN 'Macintosh'
+              WHEN ${operating_system_code}=10 THEN 'Playstation'
+              WHEN ${operating_system_code}=11 THEN 'Bada'
+              WHEN ${operating_system_code}=12 THEN 'WebOS'
+              WHEN ${operating_system_code}=13 THEN 'Linux'
+              WHEN ${operating_system_code}=14 THEN 'Hiptop'
+              WHEN ${operating_system_code}=15 THEN 'MeeGo'
+              WHEN ${operating_system_code}=16 THEN 'Wii'
+              WHEN ${operating_system_code}=17 THEN 'Xbox'
+              WHEN ${operating_system_code}=18 THEN 'PlayStation Vita'
+              WHEN ${operating_system_code}=19 THEN 'Smart TV'
+              WHEN ${operating_system_code}=20 THEN 'Nintendo 3DS'
+              WHEN ${operating_system_code}=21 THEN 'Chromecast'
+            ELSE NULL END;;
   }
 
   dimension: playback_location_type {
