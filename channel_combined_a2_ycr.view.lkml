@@ -5,6 +5,17 @@ view: channel_combined_a2_ycr {
 #######YouTube Dimensions#######
   ###########################
 
+  dimension: block_name {
+    type: string
+    sql: "YouTube" ;;
+    link: {
+      url: "https://googlecloud.looker.com/dashboards/62"
+      label: "YouTube Dashboard"
+      icon_url: "http://www.looker.com/favicon.ico"
+    }
+  }
+
+
   dimension_group: _data {
     type: time
     timeframes: [

@@ -1,15 +1,7 @@
 view: channel_annotations_a1_ycr {
   sql_table_name: youtube_channel_reports.channel_annotations_a1_ycr ;;
 
-  dimension: block_name {
-    type: string
-    sql: "YouTube" ;;
-    link: {
-      url: "https://googlecloud.looker.com/dashboards/62"
-      label: "YouTube Dashboard"
-      icon_url: "http://www.looker.com/favicon.ico"
-    }
-  }
+
 
   dimension_group: _data {
     type: time
