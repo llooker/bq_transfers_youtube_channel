@@ -239,7 +239,7 @@ view: channel_combined_a2_ycr {
   measure: total_views {
     type: sum
     sql: ${views} ;;
-    drill_fields: [video_detail*]
+    drill_fields: [video_id, video_facts.video_length_seconds,total_views,avg_view_duration_s]
   }
   measure: average_views {
     type: average
