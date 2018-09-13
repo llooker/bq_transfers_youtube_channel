@@ -1,493 +1,717 @@
-- dashboard: traffic_overview
-  title: Traffic Overview
-  layout: tile
-  tile_size: 100
-
-  filters:
-
+- dashboard: quiz_results__httpsbit_lymdpnext18
+  title: Quiz Results - https://bit.ly/mdp-next18
+  layout: newspaper
   elements:
-    - name: total_number_sources
-      title: Total Number Sources
-      type: single_value
-      model: youtube_channel_owner
-      explore: channel_combined_a2_ycr
-      measures: [channel_combined_a2_ycr.count_sources]
-      limit: '500'
-      column_limit: '50'
-      query_timezone: America/Los_Angeles
-      custom_color_enabled: false
-      custom_color: forestgreen
-      show_single_value_title: true
-      show_comparison: false
-      comparison_type: value
-      comparison_reverse_colors: false
-      show_comparison_label: true
-      stacking: ''
-      show_value_labels: false
-      label_density: 25
-      legend_position: center
-      x_axis_gridlines: false
-      y_axis_gridlines: true
-      show_view_names: true
-      limit_displayed_rows: false
-      y_axis_combined: true
-      show_y_axis_labels: true
-      show_y_axis_ticks: true
-      y_axis_tick_density: default
-      y_axis_tick_density_custom: 5
-      show_x_axis_label: true
-      show_x_axis_ticks: true
-      x_axis_scale: auto
-      y_axis_scale_mode: linear
-      ordering: none
-      show_null_labels: false
-      show_totals_labels: false
-      show_silhouette: false
-      totals_color: "#808080"
-      series_types: {}
-
-    - name: total_views
-      title: Total Views
-      type: single_value
-      model: youtube_channel_owner
-      explore: channel_combined_a2_ycr
-      measures: [channel_combined_a2_ycr.total_views]
-      limit: '500'
-      column_limit: '50'
-      query_timezone: America/Los_Angeles
-      custom_color_enabled: false
-      custom_color: forestgreen
-      show_single_value_title: true
-      show_comparison: false
-      comparison_type: value
-      comparison_reverse_colors: false
-      show_comparison_label: true
-      stacking: ''
-      show_value_labels: false
-      label_density: 25
-      legend_position: center
-      x_axis_gridlines: false
-      y_axis_gridlines: true
-      show_view_names: true
-      limit_displayed_rows: false
-      y_axis_combined: true
-      show_y_axis_labels: true
-      show_y_axis_ticks: true
-      y_axis_tick_density: default
-      y_axis_tick_density_custom: 5
-      show_x_axis_label: true
-      show_x_axis_ticks: true
-      x_axis_scale: auto
-      y_axis_scale_mode: linear
-      ordering: none
-      show_null_labels: false
-      show_totals_labels: false
-      show_silhouette: false
-      totals_color: "#808080"
-      series_types: {}
-
-    - name: average_view_time_seconds
-      title: Average View Time (Seconds)
-      type: single_value
-      model: youtube_channel_owner
-      explore: channel_combined_a2_ycr
-      measures: [channel_combined_a2_ycr.avg_view_duration_s]
-      limit: '500'
-      column_limit: '50'
-      query_timezone: America/Los_Angeles
-      custom_color_enabled: false
-      custom_color: forestgreen
-      show_single_value_title: true
-      show_comparison: false
-      comparison_type: value
-      comparison_reverse_colors: false
-      show_comparison_label: true
-      stacking: ''
-      show_value_labels: false
-      label_density: 25
-      legend_position: center
-      x_axis_gridlines: false
-      y_axis_gridlines: true
-      show_view_names: true
-      limit_displayed_rows: false
-      y_axis_combined: true
-      show_y_axis_labels: true
-      show_y_axis_ticks: true
-      y_axis_tick_density: default
-      y_axis_tick_density_custom: 5
-      show_x_axis_label: true
-      show_x_axis_ticks: true
-      x_axis_scale: auto
-      y_axis_scale_mode: linear
-      ordering: none
-      show_null_labels: false
-      show_totals_labels: false
-      show_silhouette: false
-      totals_color: "#808080"
-      series_types: {}
-
-    - name: average_percent_of_video_watched
-      title: Average Percent of Video Watched
-      type: single_value
-      model: youtube_channel_owner
-      explore: channel_combined_a2_ycr
-      measures: [channel_combined_a2_ycr.avg_view_duration_percentage]
-      limit: '500'
-      column_limit: '50'
-      query_timezone: America/Los_Angeles
-      custom_color_enabled: false
-      custom_color: forestgreen
-      show_single_value_title: true
-      show_comparison: false
-      comparison_type: value
-      comparison_reverse_colors: false
-      show_comparison_label: true
-      stacking: ''
-      show_value_labels: false
-      label_density: 25
-      legend_position: center
-      x_axis_gridlines: false
-      y_axis_gridlines: true
-      show_view_names: true
-      limit_displayed_rows: false
-      y_axis_combined: true
-      show_y_axis_labels: true
-      show_y_axis_ticks: true
-      y_axis_tick_density: default
-      y_axis_tick_density_custom: 5
-      show_x_axis_label: true
-      show_x_axis_ticks: true
-      x_axis_scale: auto
-      y_axis_scale_mode: linear
-      ordering: none
-      show_null_labels: false
-      show_totals_labels: false
-      show_silhouette: false
-      totals_color: "#808080"
-      series_types: {}
-
-    - name: performance_by_traffic_source
-      title: Performance by Traffic Source
-      type: looker_column
-      model: youtube_channel_owner
-      explore: channel_combined_a2_ycr
-      dimensions: [channel_combined_a2_ycr.traffic_source]
-      measures: [channel_combined_a2_ycr.avg_view_duration_s, channel_combined_a2_ycr.avg_view_duration_percentage,
-        channel_combined_a2_ycr.total_views]
-      sorts: [channel_combined_a2_ycr.total_views desc]
-      limit: '500'
-      column_limit: '50'
-      query_timezone: America/Los_Angeles
-      stacking: ''
-      show_value_labels: false
-      label_density: 25
-      legend_position: center
-      x_axis_gridlines: false
-      y_axis_gridlines: true
-      show_view_names: true
-      limit_displayed_rows: false
-      y_axis_combined: false
-      show_y_axis_labels: false
-      show_y_axis_ticks: false
-      y_axis_tick_density: default
-      y_axis_tick_density_custom: 5
-      show_x_axis_label: true
-      show_x_axis_ticks: true
-      x_axis_scale: auto
-      y_axis_scale_mode: linear
-      ordering: none
-      show_null_labels: false
-      show_totals_labels: false
-      show_silhouette: false
-      totals_color: "#808080"
-      custom_color_enabled: false
-      custom_color: forestgreen
-      show_single_value_title: true
-      show_comparison: false
-      comparison_type: value
-      comparison_reverse_colors: false
-      show_comparison_label: true
-      series_types:
-        channel_combined_a2_ycr.avg_view_duration_s: line
-        channel_combined_a2_ycr.avg_view_duration_percentage: line
-      series_colors:
-        channel_combined_a2_ycr.total_views: "#3B4260"
-        channel_combined_a2_ycr.avg_view_duration_percentage: "#39A736"
-
-    - name: performance_by_device
-      title: Performance by Device
-      type: looker_column
-      model: youtube_channel_owner
-      explore: channel_combined_a2_ycr
-      dimensions: [channel_combined_a2_ycr.device]
-      measures: [channel_combined_a2_ycr.avg_view_duration_s, channel_combined_a2_ycr.avg_view_duration_percentage,
-        channel_combined_a2_ycr.total_views]
-      sorts: [channel_combined_a2_ycr.avg_view_duration_s desc]
-      limit: '500'
-      column_limit: '50'
-      query_timezone: America/Los_Angeles
-      stacking: ''
-      show_value_labels: false
-      label_density: 25
-      legend_position: center
-      x_axis_gridlines: false
-      y_axis_gridlines: true
-      show_view_names: true
-      limit_displayed_rows: false
-      y_axis_combined: false
-      show_y_axis_labels: false
-      show_y_axis_ticks: false
-      y_axis_tick_density: default
-      y_axis_tick_density_custom: 5
-      show_x_axis_label: true
-      show_x_axis_ticks: true
-      x_axis_scale: auto
-      y_axis_scale_mode: linear
-      ordering: none
-      show_null_labels: false
-      show_totals_labels: false
-      show_silhouette: false
-      totals_color: "#808080"
-      custom_color_enabled: false
-      custom_color: forestgreen
-      show_single_value_title: true
-      show_comparison: false
-      comparison_type: value
-      comparison_reverse_colors: false
-      show_comparison_label: true
-      series_types:
-        channel_combined_a2_ycr.avg_view_duration_s: line
-        channel_combined_a2_ycr.avg_view_duration_percentage: line
-      series_colors:
-        channel_combined_a2_ycr.total_views: "#3B4260"
-        channel_combined_a2_ycr.avg_view_duration_percentage: "#39A736"
-
-    - name: subscribed_vs_non_views
-      title: Subscription Views
-      type: looker_pie
-      model: youtube_channel_owner
-      explore: channel_combined_a2_ycr
-      dimensions: [channel_combined_a2_ycr.subscribed_status]
-      measures: [channel_combined_a2_ycr.total_views]
-      sorts: [channel_combined_a2_ycr.total_views desc]
-      limit: '500'
-      column_limit: '50'
-      query_timezone: America/Los_Angeles
-      value_labels: legend
-      label_type: labPer
-      stacking: ''
-      show_value_labels: false
-      label_density: 25
-      legend_position: center
-      x_axis_gridlines: false
-      y_axis_gridlines: true
-      show_view_names: true
-      limit_displayed_rows: false
-      y_axis_combined: true
-      show_y_axis_labels: true
-      show_y_axis_ticks: true
-      y_axis_tick_density: default
-      y_axis_tick_density_custom: 5
-      show_x_axis_label: true
-      show_x_axis_ticks: true
-      x_axis_scale: auto
-      y_axis_scale_mode: linear
-      ordering: none
-      show_null_labels: false
-      show_totals_labels: false
-      show_silhouette: false
-      totals_color: "#808080"
-      series_types: {}
-      series_colors:
-        not_subscribed: "#3B4260"
-        subscribed: "#1D98D3"
-
-    - name: subscription_views_over_time
-      title: Subscription Views over Time
-      type: looker_area
-      model: youtube_channel_owner
-      explore: channel_combined_a2_ycr
-      dimensions: [channel_combined_a2_ycr.subscribed_status, channel_combined_a2_ycr._data_date]
-      pivots: [channel_combined_a2_ycr.subscribed_status]
-      fill_fields: [channel_combined_a2_ycr._data_date]
-      measures: [channel_combined_a2_ycr.total_views]
-      sorts: [channel_combined_a2_ycr.total_views desc 0, channel_combined_a2_ycr.subscribed_status]
-      limit: '500'
-      column_limit: '50'
-      query_timezone: America/Los_Angeles
-      stacking: ''
-      show_value_labels: false
-      label_density: 25
-      legend_position: center
-      x_axis_gridlines: false
-      y_axis_gridlines: true
-      show_view_names: true
-      limit_displayed_rows: false
-      y_axis_combined: true
-      show_y_axis_labels: true
-      show_y_axis_ticks: true
-      y_axis_tick_density: default
-      y_axis_tick_density_custom: 5
-      show_x_axis_label: true
-      show_x_axis_ticks: true
-      x_axis_scale: auto
-      y_axis_scale_mode: linear
-      show_null_points: true
-      point_style: none
-      interpolation: linear
-      show_totals_labels: false
-      show_silhouette: false
-      totals_color: "#808080"
-      value_labels: legend
-      label_type: labPer
-      ordering: none
-      show_null_labels: false
-      series_types: {}
-      series_colors:
-        not_subscribed: "#3B4260"
-        subscribed: "#1D98D3"
-
-    - name: subscription_by_source
-      title: Subscription by Source
-      type: looker_donut_multiples
-      model: youtube_channel_owner
-      explore: channel_combined_a2_ycr
-      dimensions: [channel_combined_a2_ycr.traffic_source, channel_combined_a2_ycr.subscribed_status]
-      pivots: [channel_combined_a2_ycr.subscribed_status]
-      measures: [channel_combined_a2_ycr.total_views]
-      sorts: [channel_combined_a2_ycr.subscribed_status 0, channel_combined_a2_ycr.traffic_source desc]
-      limit: '500'
-      column_limit: '50'
-      query_timezone: America/Los_Angeles
-      show_value_labels: false
-      font_size: 12
-      stacking: ''
-      label_density: 25
-      legend_position: center
-      x_axis_gridlines: false
-      y_axis_gridlines: true
-      show_view_names: true
-      limit_displayed_rows: false
-      y_axis_combined: true
-      show_y_axis_labels: true
-      show_y_axis_ticks: true
-      y_axis_tick_density: default
-      y_axis_tick_density_custom: 5
-      show_x_axis_label: true
-      show_x_axis_ticks: true
-      x_axis_scale: auto
-      y_axis_scale_mode: linear
-      ordering: none
-      show_null_labels: false
-      show_totals_labels: false
-      show_silhouette: false
-      totals_color: "#808080"
-      show_row_numbers: true
-      truncate_column_names: false
-      hide_totals: false
-      hide_row_totals: false
-      table_theme: editable
-      enable_conditional_formatting: false
-      conditional_formatting_ignored_fields: []
-      conditional_formatting_include_totals: false
-      conditional_formatting_include_nulls: false
-      series_types: {}
-
-
-    - name: video_length_and_viewership_relation
-      title: Video Completion Rate by Length of Video
-      type: looker_column
-      model: youtube_channel_owner
-      explore: channel_combined_a2_ycr
-      dimensions: [video_facts.video_length_minutes_tier]
-      measures: [channel_combined_a2_ycr.avg_view_duration_percentage, channel_combined_a2_ycr.video_count]
-      sorts: [video_facts.video_length_minutes_tier]
-      limit: '500'
-      column_limit: '50'
-      query_timezone: America/Los_Angeles
-      stacking: ''
-      show_value_labels: false
-      label_density: 25
-      legend_position: center
-      x_axis_gridlines: false
-      y_axis_gridlines: true
-      show_view_names: true
-      limit_displayed_rows: false
-      y_axis_combined: true
-      show_y_axis_labels: true
-      show_y_axis_ticks: true
-      y_axis_tick_density: default
-      y_axis_tick_density_custom: 5
-      show_x_axis_label: true
-      show_x_axis_ticks: true
-      x_axis_scale: auto
-      y_axis_scale_mode: linear
-      ordering: none
-      show_null_labels: false
-      show_totals_labels: false
-      show_silhouette: false
-      totals_color: "#808080"
-      series_types:
-        channel_combined_a2_ycr.avg_view_duration_percentage: line
-
-
-    - name: views_by_geography
-      title: Views by Location
-      type: looker_map
-      model: youtube_channel_owner
-      explore: channel_combined_a2_ycr
-      dimensions: [channel_combined_a2_ycr.country_code]
-      measures: [channel_combined_a2_ycr.total_views]
-      sorts: [channel_combined_a2_ycr.total_views desc]
-      limit: '500'
-      column_limit: '50'
-      query_timezone: America/Los_Angeles
-      map_plot_mode: points
-      heatmap_gridlines: false
-      heatmap_opacity: 0.5
-      show_region_field: true
-      draw_map_labels_above_data: true
-      map_tile_provider: positron
-      map_position: fit_data
-      map_scale_indicator: 'off'
-      map_pannable: true
-      map_zoomable: true
-      map_marker_type: circle
-      map_marker_icon_name: default
-      map_marker_radius_mode: proportional_value
-      map_marker_units: meters
-      map_marker_proportional_scale_type: linear
-      map_marker_color_mode: fixed
-      show_view_names: true
-      show_legend: true
-      quantize_map_value_colors: false
-      stacking: ''
-      show_value_labels: false
-      label_density: 25
-      legend_position: center
-      x_axis_gridlines: false
-      y_axis_gridlines: true
-      limit_displayed_rows: false
-      y_axis_combined: true
-      show_y_axis_labels: true
-      show_y_axis_ticks: true
-      y_axis_tick_density: default
-      y_axis_tick_density_custom: 5
-      show_x_axis_label: true
-      show_x_axis_ticks: true
-      x_axis_scale: auto
-      y_axis_scale_mode: linear
-      show_null_points: true
-      point_style: none
-      interpolation: linear
-      show_totals_labels: false
-      show_silhouette: false
-      totals_color: "#808080"
-      value_labels: legend
-      label_type: labPer
-      ordering: none
-      show_null_labels: false
-      series_types: {}
-      series_colors:
-        not_subscribed: "#3B4260"
-        subscribed: "#1D98D3"
+  - title: Answers Per Minute
+    name: Answers Per Minute
+    model: google_next_quiz_app_mdp_next_test
+    explore: quiz_events
+    type: looker_line
+    fields:
+    - quiz_events.answer_submitted_minute
+    - question.difficulty
+    - count_of_answer_key
+    pivots:
+    - question.difficulty
+    fill_fields:
+    - quiz_events.answer_submitted_minute
+    sorts:
+    - quiz_events.answer_submitted_minute desc
+    - question.difficulty
+    limit: 30
+    dynamic_fields:
+    - measure: count_of_question_id
+      based_on: quiz_events.question_id
+      expression: ''
+      label: Count of Question ID
+      type: count_distinct
+      _kind_hint: measure
+      _type_hint: number
+    - measure: count_of_answer_key
+      based_on: quiz_events.answer_key
+      expression: ''
+      label: Count of Answer Key
+      type: count_distinct
+      _kind_hint: measure
+      _type_hint: number
+    query_timezone: America/New_York
+    stacking: ''
+    show_value_labels: false
+    label_density: 25
+    legend_position: center
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    show_view_names: true
+    point_style: circle_outline
+    limit_displayed_rows: false
+    y_axis_combined: true
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: false
+    show_x_axis_ticks: true
+    x_axis_scale: auto
+    y_axis_scale_mode: linear
+    x_axis_reversed: false
+    y_axis_reversed: false
+    show_null_points: true
+    interpolation: linear
+    series_types: {}
+    colors:
+    - 'palette: Default'
+    series_colors:
+      0 - count_of_question_id: "#008744"
+      1 - count_of_question_id: "#ffa700"
+      2 - count_of_question_id: "#d62d20"
+      0 - count_of_answer_key: "#008744"
+      1 - count_of_answer_key: "#ffa700"
+      2 - count_of_answer_key: "#d62d20"
+    y_axes:
+    - label: ''
+      orientation: left
+      series:
+      - id: 0 - count_of_answer_key
+        name: Easy
+        axisId: count_of_answer_key
+      - id: 1 - count_of_answer_key
+        name: Medium
+        axisId: count_of_answer_key
+      - id: 2 - count_of_answer_key
+        name: Hard
+        axisId: count_of_answer_key
+      showLabels: false
+      showValues: true
+      valueFormat: "#"
+      unpinAxis: false
+      tickDensity: default
+      type: linear
+    series_labels:
+      1 - count_of_question_id: Medium
+      0 - count_of_question_id: Easy
+      2 - count_of_question_id: Hard
+      0 - count_of_answer_key: Easy
+      1 - count_of_answer_key: Medium
+      2 - count_of_answer_key: Hard
+    hidden_series: []
+    listen: {}
+    refresh: 30 seconds
+    row: 2
+    col: 0
+    width: 19
+    height: 8
+  - title: Total Quiz Takers
+    name: Total Quiz Takers
+    model: google_next_quiz_app_mdp_next_test
+    explore: quiz_events
+    type: single_value
+    fields:
+    - quiz_events.user_count
+    limit: 500
+    column_limit: 50
+    custom_color_enabled: false
+    custom_color: forestgreen
+    show_single_value_title: true
+    show_comparison: false
+    comparison_type: value
+    comparison_reverse_colors: false
+    show_comparison_label: true
+    stacking: ''
+    show_value_labels: false
+    label_density: 25
+    legend_position: center
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    show_view_names: true
+    point_style: none
+    limit_displayed_rows: false
+    y_axis_combined: true
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: true
+    show_x_axis_ticks: true
+    x_axis_scale: auto
+    y_axis_scale_mode: linear
+    x_axis_reversed: false
+    y_axis_reversed: false
+    ordering: none
+    show_null_labels: false
+    show_totals_labels: false
+    show_silhouette: false
+    totals_color: "#808080"
+    series_types: {}
+    listen: {}
+    refresh: 4 seconds
+    row: 0
+    col: 9
+    width: 5
+    height: 2
+  - name: Leaderboard - % Correct
+    title: Leaderboard - % Correct
+    model: google_next_quiz_app_mdp_next_test
+    explore: quiz_events
+    type: looker_bar
+    fields:
+    - quiz_events.user_id
+    - quiz_events.count_percent
+    - quiz_events.is_answer_correct
+    pivots:
+    - quiz_events.is_answer_correct
+    fill_fields:
+    - quiz_events.is_answer_correct
+    sorts:
+    - quiz_events.count_percent desc 0
+    - quiz_events.is_answer_correct desc
+    limit: 10
+    column_limit: 50
+    dynamic_fields:
+    - table_calculation: quiz_user_id
+      label: Quiz User ID
+      expression: upper(substring(${quiz_events.user_id},length(${quiz_events.user_id})-5,6))
+      value_format:
+      value_format_name:
+      _kind_hint: dimension
+      _type_hint: string
+    stacking: percent
+    show_value_labels: true
+    label_density: 25
+    legend_position: center
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    show_view_names: true
+    point_style: none
+    limit_displayed_rows: false
+    y_axis_combined: true
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: false
+    show_x_axis_ticks: true
+    x_axis_scale: auto
+    y_axis_scale_mode: linear
+    x_axis_reversed: false
+    y_axis_reversed: false
+    ordering: none
+    show_null_labels: false
+    show_totals_labels: false
+    show_silhouette: false
+    totals_color: "#808080"
+    custom_color_enabled: false
+    custom_color: forestgreen
+    show_single_value_title: true
+    show_comparison: false
+    comparison_type: value
+    comparison_reverse_colors: false
+    show_comparison_label: true
+    series_types: {}
+    column_group_spacing_ratio: 0.2
+    series_colors:
+      Yes - quiz_events.count_percent: "#0057e7"
+      No - quiz_events.count_percent: "#c9d1e1"
+    series_labels:
+      Yes - quiz_events.count_percent: Correct
+      No - quiz_events.count_percent: Incorrect
+    y_axes:
+    - label: ''
+      orientation: bottom
+      series:
+      - id: Yes - quiz_events.count_percent
+        name: Correct
+        axisId: quiz_events.count_percent
+      - id: No - quiz_events.count_percent
+        name: Incorrect
+        axisId: quiz_events.count_percent
+      showLabels: false
+      showValues: false
+      unpinAxis: false
+      tickDensity: default
+      tickDensityCustom: 5
+      type: linear
+    label_color:
+    - "#fff"
+    font_size: 16px
+    hidden_fields:
+    - quiz_events.user_id
+    hide_legend: true
+    listen: {}
+    refresh: 7 seconds
+    row: 10
+    col: 9
+    width: 10
+    height: 7
+  - title: Questions Answered
+    name: Questions Answered
+    model: google_next_quiz_app_mdp_next_test
+    explore: quiz_events
+    type: single_value
+    fields:
+    - count_of_answer_key
+    limit: 500
+    column_limit: 50
+    dynamic_fields:
+    - measure: count_of_question_id
+      based_on: quiz_events.question_id
+      expression: ''
+      label: Count of Question ID
+      type: count_distinct
+      _kind_hint: measure
+      _type_hint: number
+    - measure: count_of_answer_submitted_timestamp
+      based_on: quiz_events.answer_submitted_timestamp
+      expression: ''
+      label: Count of Answer Submitted Timestamp
+      type: count_distinct
+      _kind_hint: measure
+      _type_hint: number
+    - measure: count_of_answer_key
+      based_on: quiz_events.answer_key
+      expression: ''
+      label: Count of Answer Key
+      type: count_distinct
+      _kind_hint: measure
+      _type_hint: number
+    custom_color_enabled: false
+    custom_color: forestgreen
+    show_single_value_title: true
+    show_comparison: false
+    comparison_type: value
+    comparison_reverse_colors: false
+    show_comparison_label: true
+    stacking: ''
+    show_value_labels: false
+    label_density: 25
+    legend_position: center
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    show_view_names: true
+    point_style: none
+    limit_displayed_rows: false
+    y_axis_combined: true
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: true
+    show_x_axis_ticks: true
+    x_axis_scale: auto
+    y_axis_scale_mode: linear
+    x_axis_reversed: false
+    y_axis_reversed: false
+    ordering: none
+    show_null_labels: false
+    show_totals_labels: false
+    show_silhouette: false
+    totals_color: "#808080"
+    series_types: {}
+    listen: {}
+    refresh: 3 seconds
+    row: 2
+    col: 19
+    width: 5
+    height: 3
+  - title: Easy Questions Correct
+    name: Easy Questions Correct
+    model: google_next_quiz_app_mdp_next_test
+    explore: quiz_events
+    type: looker_pie
+    fields:
+    - quiz_events.is_answer_correct
+    - count_of_answer_key
+    fill_fields:
+    - quiz_events.is_answer_correct
+    filters:
+      question.difficulty: '0'
+    limit: 3
+    column_limit: 50
+    dynamic_fields:
+    - measure: count_of_answer_submitted_timestamp
+      based_on: quiz_events.answer_submitted_timestamp
+      expression: ''
+      label: Count of Answer Submitted Timestamp
+      type: count_distinct
+      _kind_hint: measure
+      _type_hint: number
+    - measure: count_of_answer_submitted_timestamp_2
+      based_on: quiz_events.answer_submitted_timestamp
+      expression: ''
+      label: Count of Answer Submitted Timestamp
+      type: count_distinct
+      _kind_hint: measure
+      _type_hint: number
+    - measure: count_of_answer_key
+      based_on: quiz_events.answer_key
+      expression: ''
+      label: Count of Answer Key
+      type: count_distinct
+      _kind_hint: measure
+      _type_hint: number
+    value_labels: labels
+    label_type: labVal
+    stacking: ''
+    show_value_labels: false
+    label_density: 25
+    legend_position: center
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    show_view_names: true
+    point_style: none
+    limit_displayed_rows: false
+    y_axis_combined: true
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: true
+    show_x_axis_ticks: true
+    x_axis_scale: auto
+    y_axis_scale_mode: linear
+    x_axis_reversed: false
+    y_axis_reversed: false
+    ordering: none
+    show_null_labels: false
+    show_totals_labels: false
+    show_silhouette: false
+    totals_color: "#808080"
+    series_types: {}
+    series_colors:
+      'Yes': "#008744"
+      'No': "#c9d1e1"
+    inner_radius: 0
+    listen: {}
+    refresh: 32 seconds
+    row: 13
+    col: 19
+    width: 5
+    height: 4
+  - title: Medium Questions Correct
+    name: Medium Questions Correct
+    model: google_next_quiz_app_mdp_next_test
+    explore: quiz_events
+    type: looker_pie
+    fields:
+    - quiz_events.is_answer_correct
+    - count_of_answer_key
+    fill_fields:
+    - quiz_events.is_answer_correct
+    filters:
+      question.difficulty: '1'
+    limit: 3
+    column_limit: 50
+    dynamic_fields:
+    - measure: count_of_answer_submitted_timestamp
+      based_on: quiz_events.answer_submitted_timestamp
+      expression: ''
+      label: Count of Answer Submitted Timestamp
+      type: count_distinct
+      _kind_hint: measure
+      _type_hint: number
+    - measure: count_of_answer_submitted_timestamp_2
+      based_on: quiz_events.answer_submitted_timestamp
+      expression: ''
+      label: Count of Answer Submitted Timestamp
+      type: count_distinct
+      _kind_hint: measure
+      _type_hint: number
+    - measure: count_of_answer_key
+      based_on: quiz_events.answer_key
+      expression: ''
+      label: Count of Answer Key
+      type: count_distinct
+      _kind_hint: measure
+      _type_hint: number
+    value_labels: labels
+    label_type: labVal
+    stacking: ''
+    show_value_labels: false
+    label_density: 25
+    legend_position: center
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    show_view_names: true
+    point_style: none
+    limit_displayed_rows: false
+    y_axis_combined: true
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: true
+    show_x_axis_ticks: true
+    x_axis_scale: auto
+    y_axis_scale_mode: linear
+    x_axis_reversed: false
+    y_axis_reversed: false
+    ordering: none
+    show_null_labels: false
+    show_totals_labels: false
+    show_silhouette: false
+    totals_color: "#808080"
+    series_types: {}
+    series_colors:
+      'Yes': "#ffa700"
+      'No': "#c9d1e1"
+    listen: {}
+    refresh: 31 seconds
+    row: 9
+    col: 19
+    width: 5
+    height: 4
+  - title: Hard Questions Correct
+    name: Hard Questions Correct
+    model: google_next_quiz_app_mdp_next_test
+    explore: quiz_events
+    type: looker_pie
+    fields:
+    - quiz_events.is_answer_correct
+    - count_of_answer_key
+    fill_fields:
+    - quiz_events.is_answer_correct
+    filters:
+      question.difficulty: '2'
+    limit: 3
+    column_limit: 50
+    dynamic_fields:
+    - measure: count_of_answer_submitted_timestamp
+      based_on: quiz_events.answer_submitted_timestamp
+      expression: ''
+      label: Count of Answer Submitted Timestamp
+      type: count_distinct
+      _kind_hint: measure
+      _type_hint: number
+    - measure: count_of_answer_key
+      based_on: quiz_events.answer_key
+      expression: ''
+      label: Count of Answer Key
+      type: count_distinct
+      _kind_hint: measure
+      _type_hint: number
+    value_labels: labels
+    label_type: labVal
+    stacking: ''
+    show_value_labels: false
+    label_density: 25
+    legend_position: center
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    show_view_names: true
+    point_style: none
+    limit_displayed_rows: false
+    y_axis_combined: true
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: true
+    show_x_axis_ticks: true
+    x_axis_scale: auto
+    y_axis_scale_mode: linear
+    x_axis_reversed: false
+    y_axis_reversed: false
+    ordering: none
+    show_null_labels: false
+    show_totals_labels: false
+    show_silhouette: false
+    totals_color: "#808080"
+    series_types: {}
+    series_colors:
+      'Yes': "#d62d20"
+      'No': "#c9d1e1"
+    listen: {}
+    refresh: 33 seconds
+    row: 5
+    col: 19
+    width: 5
+    height: 4
+  - title: Leaderboard - Count Correct
+    name: Leaderboard - Count Correct
+    model: google_next_quiz_app_mdp_next_test
+    explore: quiz_events
+    type: looker_bar
+    fields:
+    - quiz_events.user_id
+    - count_of_answer_key
+    filters:
+      quiz_events.is_answer_correct: 'Yes'
+    sorts:
+    - count_of_answer_key desc
+    limit: 10
+    column_limit: 50
+    dynamic_fields:
+    - table_calculation: quiz_user_id
+      label: Quiz User ID
+      expression: upper(substring(${quiz_events.user_id},length(${quiz_events.user_id})-5,6))
+      value_format:
+      value_format_name:
+      _kind_hint: dimension
+      _type_hint: string
+    - measure: count_of_answer_submitted_timestamp
+      based_on: quiz_events.answer_submitted_timestamp
+      type: count_distinct
+      label: Count of Answer Submitted Timestamp
+      expression:
+      _kind_hint: measure
+      _type_hint: number
+    - measure: count_of_answer_key
+      based_on: quiz_events.answer_key
+      expression: ''
+      label: Count of Answer Key
+      type: count_distinct
+      _kind_hint: measure
+      _type_hint: number
+    stacking: normal
+    show_value_labels: true
+    label_density: 25
+    legend_position: center
+    x_axis_gridlines: true
+    y_axis_gridlines: true
+    show_view_names: false
+    point_style: none
+    limit_displayed_rows: false
+    y_axis_combined: true
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: false
+    show_x_axis_ticks: true
+    x_axis_scale: auto
+    y_axis_scale_mode: linear
+    x_axis_reversed: false
+    y_axis_reversed: false
+    ordering: none
+    show_null_labels: false
+    show_totals_labels: false
+    show_silhouette: false
+    totals_color: "#333"
+    custom_color_enabled: false
+    custom_color: forestgreen
+    show_single_value_title: true
+    show_comparison: false
+    comparison_type: value
+    comparison_reverse_colors: false
+    show_comparison_label: true
+    series_types:
+      count_of_answer_submitted_timestamp: column
+    column_group_spacing_ratio: 0
+    series_colors:
+      Yes - quiz_events.count_percent: "#0057e7"
+      No - quiz_events.count_percent: "#c9d1e1"
+      count_of_answer_submitted_timestamp: "#0057e7"
+      count_of_answer_key: "#0057e7"
+    series_labels:
+      Yes - quiz_events.count_percent: Correct
+      No - quiz_events.count_percent: Incorrect
+    y_axes:
+    - label: ''
+      orientation: bottom
+      series:
+      - id: Yes - quiz_events.count_percent
+        name: Correct
+        axisId: quiz_events.count_percent
+      - id: No - quiz_events.count_percent
+        name: Incorrect
+        axisId: quiz_events.count_percent
+      showLabels: false
+      showValues: false
+      unpinAxis: false
+      tickDensity: default
+      tickDensityCustom: 5
+      type: linear
+    label_color:
+    - "#fff"
+    font_size: 16px
+    hidden_fields:
+    - quiz_events.user_id
+    hide_legend: false
+    limit_displayed_rows_values:
+      show_hide: hide
+      first_last: first
+      num_rows: 0
+    x_padding_right: 5
+    listen: {}
+    refresh: 6 seconds
+    row: 10
+    col: 0
+    width: 9
+    height: 7
+  - title: New Tile
+    name: New Tile
+    model: google_next_quiz_app_mdp_next_test
+    explore: next_image
+    type: single_value
+    fields:
+    - next_image.looker_image
+    sorts:
+    - next_image.looker_image
+    limit: 500
+    query_timezone: America/New_York
+    custom_color_enabled: false
+    custom_color: forestgreen
+    show_single_value_title: false
+    show_comparison: false
+    comparison_type: value
+    comparison_reverse_colors: false
+    show_comparison_label: true
+    row: 0
+    col: 0
+    width: 9
+    height: 2
+  - name: Quiz Results
+    type: text
+    title_text: Quiz Results
+    body_text: ''
+    row: 0
+    col: 19
+    width: 5
+    height: 2
+  - title: Active Quiz Takers
+    name: Active Quiz Takers
+    model: google_next_quiz_app_mdp_next_test
+    explore: quiz_events
+    type: single_value
+    fields:
+    - quiz_events.active_user_count
+    limit: 500
+    query_timezone: America/New_York
+    custom_color_enabled: false
+    custom_color: forestgreen
+    show_single_value_title: true
+    show_comparison: false
+    comparison_type: value
+    comparison_reverse_colors: false
+    show_comparison_label: true
+    stacking: ''
+    show_value_labels: false
+    label_density: 25
+    legend_position: center
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    show_view_names: true
+    point_style: none
+    limit_displayed_rows: false
+    y_axis_combined: true
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: true
+    show_x_axis_ticks: true
+    x_axis_scale: auto
+    y_axis_scale_mode: linear
+    x_axis_reversed: false
+    y_axis_reversed: false
+    ordering: none
+    show_null_labels: false
+    show_totals_labels: false
+    show_silhouette: false
+    totals_color: "#808080"
+    series_types: {}
+    listen: {}
+    refresh: 30 seconds
+    row: 0
+    col: 14
+    width: 5
+    height: 2
